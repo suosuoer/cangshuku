@@ -1,7 +1,7 @@
 //202510603309
 //1482992616@qq.com
 //文嘉颖
-include <stdio.h> 
+#include <stdio.h> 
 
 int main()
 {
