@@ -1,30 +1,33 @@
 //202510603309
 //1482992616@qq.com
 //文嘉颖
-#include<stdio.h>
+#include <stdio.h>
 
-int main()
+int main(void)
 {
-    int score;
-    printf("请输入学生成绩(0—100): ");
-    scanf("%d", &score);
-    if(score<0||score>100){
-        printf("输入成绩无效,请输入0-100之间的整数!\n");
-    }else{
-    if(score>=90){
-        printf("等级:A\n");
-    }else if(score>=80){
-        printf("等级:B\n");
-    }else if(score>=70){
-        printf("等级:C\n");
-    }else if(score>=60){
-        printf("等级:D\n");
-    }else{
-        printf("等级:E\n");
+    int num = 100;
+    int count = 0;
+
+    /* 遍历所有三位数，判断是否为水仙花数（每位的立方和等于自身） */
+    while (num <= 999) {
+        int hundreds = num / 100;
+        int tens = (num / 10) % 10;
+        int units = num % 10;
+        int sum = hundreds * hundreds * hundreds + tens * tens * tens + units * units * units;
+
+        if (sum == num) {
+            if (count == 0)
+                printf("%d", num);
+            else
+                printf(" %d", num);
+            count++;
+        }
+
+        num++;
     }
 
-    }
+    printf("\n");
     return 0;
-
-
 }
+
+ 
