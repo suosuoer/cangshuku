@@ -13,7 +13,7 @@ int main()
 
     
     if (n <= 0 || n >= 50) {
-        printf("密钥不安全,请重新输入\n");
+        printf("密钥不安全，请重新输入\n");
         return 0;
     }
 
@@ -29,12 +29,10 @@ int main()
     }
 
     if (is_prime) {
-        printf("密钥安全,密码设置成功\n");
+        printf("密钥安全，密码设置成功\n");
     } else {
-        printf("密钥不安全,请重新输入\n");
+        printf("密钥不安全， 请重新输入\n");
     }
 
     return 0;
 }
-
- 
