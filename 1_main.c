@@ -2,37 +2,34 @@
 //1482992616@qq.com
 //文嘉颖
 #include <stdio.h>
-
-int main()
-{
-    int n;
-    int is_prime = 1;
-
-    printf("请输入一个小于50的正整数作为密钥:"); 
-    if (scanf("%d", &n) != 1) return 0;
-
-    
-    if (n <= 0 || n >= 50) {
-        printf("密钥不安全，请重新输入\n");
-        return 0;
-    }
-
-    
-    if (n == 1) is_prime = 0;
-    else {
-        for (int i = 2; i <= n / 2; i++) {
-            if (n % i == 0) {
-                is_prime = 0;
-                break;
-            }
+int main(){
+    int arr[3][3];
+    int i = 0, j;
+    printf("请输入3*3矩阵:\n");
+    while(i<3){
+        j = 0;
+        while(j<3){
+            scanf("%d",&arr[i][j]);
+            j++;
         }
+        i++;
     }
 
-    if (is_prime) {
-        printf("密钥安全，密码设置成功\n");
-    } else {
-        printf("密钥不安全，请重新输入\n");
+    printf("输出的3*3矩阵为:\n");
+    i = 0;
+    while(i<3){
+        j = 0;
+        while(j<3){
+            printf("%d",arr[i][j]);
+            if(i<3){
+                printf(" ");
+            }
+            j++;
+        }
+        printf("\n");
+        i++;
     }
-
     return 0;
 }
+
+
