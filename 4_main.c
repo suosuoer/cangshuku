@@ -3,32 +3,19 @@
 //文嘉颖
 #include <stdio.h>
 
-int main() {
-    int num = 100;  
-    int first = 1;  
-
-    
-    while (num <= 999) {
-        int hundreds = num / 100;
-        int tens = (num / 10) % 10;
-        int units = num % 10;
-
-        int cube_sum = hundreds * hundreds * hundreds + 
-                       tens * tens * tens + 
-                       units * units * units;
-
-        if (cube_sum == num) {
-            if (first) {
-                printf("%d", num);
-                first = 0;  
-            } else {
-                printf(" %d", num);
-            }
+int one(int a,int b){
+    int result = 1;
+    for(int i=0;i<b;i++){
+        result *=a;
+    }
+    return result;
+}
+    int main(){
+        int sum=0;
+        for(int num=1;num<=5;num++){
+            sum += one(num,2);
         }
 
-        num++;  
-    }
-
-    printf("\n");  
-    return 0;
-}
+        printf("%d",sum);
+        return 0;
+    }       
