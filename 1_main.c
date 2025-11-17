@@ -2,31 +2,12 @@
 //1482992616@qq.com
 //文嘉颖
 #include <stdio.h>
-
-int main() {
-    int arr[3][3];
-    int i, j;
-
-   
-    for (i = 0; i < 3; i++) {
-        for (j = 0; j < 3; j++) {
-            scanf("%d", &arr[i][j]);
-        }
-    }
-
-   
-    for (i = 0; i < 3; i++) {
-        for (j = 0; j < 3; j++) {
-            printf("%d", arr[i][j]); 
-            
-
-            if (j < 2) { 
-                printf(" "); 
-            }
-        }
-        printf("\n");
-    }
-
+int main()
+{
+    int a;
+    scanf("%d", &a);
+    int *p = &a;
+    *p += 10;
+    printf("%d,%d\n", a, *p);
     return 0;
 }
-
