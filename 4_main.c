@@ -2,20 +2,25 @@
 //1482992616@qq.com
 //文嘉颖
 #include <stdio.h>
-
-int one(int a,int b){
-    int result = 1;
-    for(int i=0;i<b;i++){
-        result *=a;
-    }
-    return result;
+void swap(int *arr,int length){
+    for(int i = 0;i < length;i++){
+    *(arr + i)+= 1;
 }
-    int main(){
-        int sum=0;
-        for(int num=1;num<=5;num++){
-            sum += one(num,2);
-        }
+    }
+int main(){
+    int arr[5];
+    int length=5;
+    for(int i = 0;i <length;i++){
+        scanf("%d", &arr[i]);
+    }
 
-        printf("%d",sum);
-        return 0;
-    }       
+    swap(arr,length);
+    for(int i = 0;i < length;i++){
+        if(i == length-1){
+            printf("%d\n",arr[i]);
+        }else{
+            printf("%d ",arr[i]);
+        }
+    }
+    return 0;
+}
