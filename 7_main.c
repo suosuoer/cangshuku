@@ -2,34 +2,33 @@
 //1482992616@qq.com
 //文嘉颖
 #include <stdio.h>
-void one(int arr[], int len){
-    int i,two;
-    
-    for (i = 0; i<len/2;i++){
-        two= arr[i];
-        arr[i] = arr[len - 1 - i];
-        arr[len - 1 - i] = two;
+void swap(int *arr,int n){
+    for(int i = 0;i < n - 1;i++){
+        for(int j = 0;j < n - 1 - i;j++){
+            if(*(arr + j) > *(arr + j + 1)){
+                int temp = *(arr + j);
+                *(arr + j) = *(arr + j + 1);
+                *(arr + j + 1) = temp;
+            }
+        }
     }
-    
 }
-
-
-
-
 int main(){
-    int arr[5];
-    int i;
-    for(i = 0; i<5;i++){
-        scanf("%d",&arr[i]);
+    int arr[10];
+    int n = 10;
+    printf("请输入10个整数");
+    for(int i = 0;i < n;i++){
+        scanf("%d", &arr[i]);
+    }
+    swap(arr,n);
+    printf("排序后的数组：");
+    for(int i = 0;i < n;i++){
+        if(i == n - 1){
+            printf("%d\n",arr[i]);
+        }else{
+            printf("%d ",arr[i]);
+        }
     }
 
-
-   one (arr,5);
-   for(i = 0;i < 5;i++){
-    printf("%d",arr[i]);
-    if(i<4){
-        printf(" ");
-    }
-   }
     return 0;
 }
