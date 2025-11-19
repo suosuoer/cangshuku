@@ -2,37 +2,23 @@
 //1482992616@qq.com
 //文嘉颖
 #include <stdio.h>
-int sum(int arr[], int len){
-    int s = 0;
-    int i;
-    for (i = 0; i<len;i++){
-        s+= arr[i];
-    }
-    return s;
-}
-
-int product(int arr[], int len){
-    int p = 1;
-    int i;
-    for(i = 0;i<len;i++){
-        p *=arr[i];
-    }
-    return p;
-}
-
-
-
+#include <stdio.h>
 int main(){
-    int arr[5];
-    int i;
-    for(i = 0; i<5;i++){
-        scanf("%d",&arr[i]);
+    int *ptr = (int *)malloc(5 * sizeof(int));
+    for(int i = 0; i < 5;i++){
+        scanf("%d", ptr + i);
+    }
+    for(int i = 0; i < 5;i++){
+        if(i ==4){
+            printf("%d\n", *(ptr + i));
+        }else{
+            printf("%d ", *ptr + i);
+        }
     }
 
-
-    int s = sum(arr,5);
-    int p = product(arr,5);
-
-    printf("%d %d",s,p);
+    free(ptr);
+    ptr = NULL;
     return 0;
 }
+
+
