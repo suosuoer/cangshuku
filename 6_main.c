@@ -12,7 +12,7 @@ int main(){
         if(i ==4){
             printf("%d\n", *(ptr + i));
         }else{
-            printf("%d ", *ptr + i);
+            printf("%d ", *(ptr + i));
         }
     }
 
@@ -20,5 +20,3 @@ int main(){
     ptr = NULL;
     return 0;
 }
-
-
